@@ -3,8 +3,14 @@
   "allure": {
     "directory": "../../../allure-results",
     "links": [
-      "https://example.org/{issue}",
-      "https://example.org/{tms}"
+      "https://jira.itspty.org/browse/{qatc}"
     ]
+  },
+  "specflow": {
+    "stepArguments": {
+      "convertToParameters": true,
+      "paramNameRegex": "^Parameter$",
+      "paramValueRegex": "^Value$"
+    }
   }
 }

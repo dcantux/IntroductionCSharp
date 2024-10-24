@@ -3,6 +3,7 @@
 ## Framework for testing with BDD
 
 ### Dependencies
+- Net8
 - Nunit
 - SpecFlow
 - FluentAssertions

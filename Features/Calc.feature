@@ -3,7 +3,9 @@ Feature: Calculator
 Simple calculator for adding two numbers
 
 	
-	@calc
+	@calculator
+	@critical
+	@qatc:QATC123
 	Scenario Outline: Add two numbers
 	Given I have entered <First> in the calculator
 	And I have entered <Second> into the calculator
