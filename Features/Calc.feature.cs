@@ -75,14 +75,18 @@ namespace IntroductionCSharp.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add two numbers")]
-        [NUnit.Framework.CategoryAttribute("calc")]
+        [NUnit.Framework.CategoryAttribute("calculator")]
+        [NUnit.Framework.CategoryAttribute("critical")]
+        [NUnit.Framework.CategoryAttribute("qatc:QATC123")]
         [NUnit.Framework.TestCaseAttribute("50", "70", "120", null)]
         [NUnit.Framework.TestCaseAttribute("30", "40", "70", null)]
         [NUnit.Framework.TestCaseAttribute("60", "30", "90", null)]
         public void AddTwoNumbers(string first, string second, string result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "calc"};
+                    "calculator",
+                    "critical",
+                    "qatc:QATC123"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -93,7 +97,7 @@ namespace IntroductionCSharp.Features
             argumentsOfScenario.Add("Second", second);
             argumentsOfScenario.Add("Result", result);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+#line 9
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -103,16 +107,16 @@ namespace IntroductionCSharp.Features
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 10
  testRunner.Given(string.Format("I have entered {0} in the calculator", first), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 11
  testRunner.And(string.Format("I have entered {0} into the calculator", second), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 12
  testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 13
  testRunner.Then(string.Format("the result should be {0} on the screen", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
