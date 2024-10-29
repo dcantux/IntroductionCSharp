@@ -1,6 +1,7 @@
 ﻿using TechTalk.SpecFlow;
 
-namespace IntroductionCSharp.StepDefinitions
+namespace IntroductionCSharp.Steps
+
 {
     [Binding]
     public class Hooks
