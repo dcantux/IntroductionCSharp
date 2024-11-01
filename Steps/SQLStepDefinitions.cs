@@ -1,15 +1,19 @@
 using DotNet.Testcontainers.Builders;
 using FluentAssertions;
 using MySqlConnector;
-using System.ComponentModel;
 using TechTalk.SpecFlow;
 using Testcontainers.MySql;
+using IntroductionCSharp.Infrastructure;
 
 namespace IntroductionCSharp.Steps
 {
     [Binding]
     public class SQLStepDefinitions
     {
+
+        private static MySqlDataReader? _readerQuery;
+
+
         [Given(@"I have a running MySQL Container")]
         public void GivenIHaveARunningMySQLContainer()
         {
@@ -42,6 +46,20 @@ namespace IntroductionCSharp.Steps
             var connection = new MySqlConnection(builder.ConnectionString);
             Task.Run(() => connection.OpenAsync());
             connection.Database.Should().Be("testing");
+        }
+
+        [When(@"I select the users table")]
+        public void WhenISelectTheUsersTable()
+        {
+            var db = Sql.Instance;
+            _readerQuery = Sql.Query("SELECT name FROM users;", db);
+        }
+
+        [Then(@"the data is accessible")]
+        public void ThenTheDataIsAccessible()
+        {
+            var data = _readerQuery?.Read();
+            data.Should().BeTrue();
         }
     }
 }
