@@ -1,0 +1,26 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+    ports:
+      - 3306:3306
+    expose:
+      - '3306'
+    volumes:
+    - ./Scripts/initDB.sql:/docker-entrypoint-initdb.d/0_init.sql
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: user
+    ports:
+      - 15672:15672
+      - 5672:5672 
+    expose:
+      - '15672'
+      - '5672'
+#    volumes:
+#      - ./Scripts/initRabbitMQ.json:/etc/rabbitmq/definitions.json
