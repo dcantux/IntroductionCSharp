@@ -105,6 +105,72 @@ namespace IntroductionCSharp.Features
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Send and Get Complex Message")]
+        [NUnit.Framework.CategoryAttribute("rabbitmq")]
+        [NUnit.Framework.CategoryAttribute("critical")]
+        [NUnit.Framework.CategoryAttribute("qatc:QATC1114")]
+        public void SendAndGetComplexMessage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "rabbitmq",
+                    "critical",
+                    "qatc:QATC1114"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send and Get Complex Message", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 16
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 17
+ testRunner.When("I send a complex message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 18
+ testRunner.Then("the message type complex is valided", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Send and Get List Message")]
+        [NUnit.Framework.CategoryAttribute("rabbitmq")]
+        [NUnit.Framework.CategoryAttribute("critical")]
+        [NUnit.Framework.CategoryAttribute("qatc:QATC1115")]
+        public void SendAndGetListMessage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "rabbitmq",
+                    "critical",
+                    "qatc:QATC1115"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send and Get List Message", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 23
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 24
+ testRunner.When("I send a list message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 25
+ testRunner.Then("the message type list is valided", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
