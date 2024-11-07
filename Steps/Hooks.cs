@@ -9,9 +9,21 @@ namespace IntroductionCSharp.Steps
     {
         
         [Before]
-        public void SetupTest(FeatureContext featureContext)
+        public async Task SetupTest(FeatureContext featureContext)
         {
-            Broker.RunInstanceRabbitMQ();
+            
+            if (featureContext.FeatureInfo.Title.Equals("TestBroker"))
+            {
+                Console.WriteLine("Starting RabbitMQ service...");
+                Broker.RunInstanceRabbitMQ();
+            }
+
+            if (featureContext.FeatureInfo.Title.Equals("TestProSub"))
+            {
+                Console.WriteLine("Starting Pulsar service...");
+                ProSub.RunInstancePulsar();
+            }
+            
             Console.WriteLine("Starting " + featureContext.FeatureInfo.Title);
         }
     }

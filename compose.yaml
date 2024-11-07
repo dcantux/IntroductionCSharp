@@ -22,5 +22,16 @@ services:
     expose:
       - '15672'
       - '5672'
-#    volumes:
-#      - ./Scripts/initRabbitMQ.json:/etc/rabbitmq/definitions.json
+  pulsar:
+    image: apachepulsar/pulsar-all:4.0.0
+    container_name: pulsar
+    environment:
+      PULSAR_STANDALONE_USE_ZOOKEEPER: 1
+    ports:
+      - 8080:8080
+      - 6650:6650 
+    expose:
+      - '8080'
+      - '6650'
+    command: pulsar standalone
+        
