@@ -23,8 +23,6 @@ namespace IntroductionCSharp.Infrastructure
             return connection.CreateModel();
         }
 
-
-
         private static String _stateContainerRabbitmq = "";
         public static void RunInstanceRabbitMQ()
         {
