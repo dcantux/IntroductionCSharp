@@ -1,9 +1,8 @@
 using FluentAssertions;
 using IntroductionCSharp.Infrastructure;
 using IntroductionCSharp.Models;
-using System;
-using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.CommonModels;
+using Reqnroll;
+
 
 namespace IntroductionCSharp.Steps
 {
