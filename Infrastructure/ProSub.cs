@@ -4,9 +4,7 @@ using DotPulsar.Extensions;
 using IntroductionCSharp.Utils;
 using System.Buffers;
 using System.Text;
-using TechTalk.SpecFlow.CommonModels;
 using Testcontainers.Pulsar;
-using Testcontainers.RabbitMq;
 
 
 namespace IntroductionCSharp.Infrastructure
